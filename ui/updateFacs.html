@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase CRUD</title>
+
+    <!-- BOOTSWATCH -->
+    <link rel="stylesheet" href="/src/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  </head>
+
+  <body class="bg_clients">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+            
+              <a class="nav-link" href="/update.html">Modificar</a>
+              <a class="nav-link" href="/view.html">Consultar</a>
+              <a class="nav-link" href="/updateFac.html">Factura</a>
+              <a class="nav-link" href="/viewFac.html">consultar Factura</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- ADD TASK -->
+   
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="cont-cus">
+            <div class="card-body">
+              <h1 class="h4">Add Task</h1>
+              <form id="task-formFac">
+                <label for="title">Fecha:</label>
+                <input
+                  type="date"
+                  id="task-fechFac"
+                  class="form-control mb-3"
+                  class="My First Title"
+                  placeholder="Task Title"
+                />
+                <label for="title">Nombre:</label>
+                <input
+                  type="text"
+                  id="task-nomFac"
+                  class="form-control mb-3"
+                  class="My First Title"
+                  placeholder="Task Title"
+                />
+                <label for="title">C.C o NIT:</label>
+                <input
+                  type="number"
+                  id="task-nitFac"
+                  class="form-control mb-3"
+                  class="My First Title"
+                  placeholder="Task Title"
+                />
+                <label for="title">Telefono:</label>
+                <input
+                  type="number"
+                  id="task-telFac"
+                  class="form-control mb-3"
+                  class="My First Title"
+                  placeholder="Task Title"
+                />
+
+                <table class="table table-striped table_facs">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">DESCRIPCION DE ELEMENTOS</th>
+                      <th scope="col">VALOR</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">LENTES:</th>
+                      <td><input id="lentesDes" type="text"></td>
+                      <td><input class="inputfac" id="lentes" type="number" ></td>
+                      <!-- <td><input class="inputf" id="od_es" type="text"></td> -->
+                    </tr>
+                    <tr>
+                      <th scope="row">MONTURAS:</th>
+                      <td><input id="monturasDes" type="text"></td>
+                      <td><input class="inputfac" id="monturas" type="number" ></td>
+                      <!-- <td><input class="inputw" id="od_es" type="text"></td> -->
+                    </tr>
+                    <tr>
+                      <th scope="row">OTROS:</th>
+                      <td><input id="otrosDes" type="text"></td>
+                      <td><input class="inputfac" id="otros" type="number" ></td>
+                      <!-- <td><input class="inputw" id="od_es" type="text"></td> -->
+                    </tr>
+                    <tr>
+                      <th scope="row">ABONO:</th>
+                      <td></td>
+                      <td><input class="inputfac" id="abono" type="number" disabled></td>
+                      <!-- <td><input class="inputw" id="od_es" type="text"></td> -->
+                    </tr>
+                    <tr>
+                      <th scope="row">SALDO:</th>
+                      <td></td>
+                      <td><input class="inputfac" id="saldo" type="text" disabled></td>
+                      <!-- <td><input class="inputw" id="od_es" type="text"></td> -->
+                    </tr>
+                    <tr>
+                      <th scope="row">TOTAL:</th>
+                      <td></td>
+                      <td><input class="inpufac" id="total" type="text" disabled></td>
+                      
+                    </tr>
+                    <tr>
+                      <td colspan="3"><button class="btn btn-primary" id="calcularButton">Calcular</button>
+                      <span><button class="btn btn-primary" id="activar">editar Saldo</button></span>
+                      <span><button class="btn btn-primary" id="actualizar" disabled>Guardar saldo</button></span></td>
+                  </tr>
+                  </tbody>
+                </table>
+
+                
+
+
+                
+
+                <button class="btn btn-success" id="btn-task-formFac">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Tasks List -->
+        <div class="col-md-6">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">doc</th>
+              <th scope="col">Nombre</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody  id="tasks-containerFac">
+
+          </tbody>
+        </table>
+      </div>
+        <div ></div>
+      </div>
+    </div>
+
+    <!-- CUSTOM CODE -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/src/indexFac.js" type="module"></script>
+    <script src="/src/functionsFac.js"></script>
+  </body>
+</html>
