@@ -227,3 +227,17 @@ body {
 	}
 }
 
+
+@media print {
+	/* Estilos que se aplicarán cuando se imprima la página */
+	body {
+	  background-color: rgb(218, 6, 6); /* Cambia el color de fondo */
+	}
+  
+	.ocultar-en-impresion {
+	  display: none; /* Oculta elementos específicos en la impresión */
+	}
+  
+	/* Otros estilos de impresión... */
+  }
+  

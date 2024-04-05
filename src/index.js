@@ -42,12 +42,17 @@ import {
       const btnsDelete = tasksContainer.querySelectorAll(".btn-delete");
       btnsDelete.forEach((btn) =>
         btn.addEventListener("click", async ({ target: { dataset } }) => {
-          try {
-            await deleteTask(dataset.id);
-            mostrarToastDel();
-          } catch (error) {
-            console.log(error);
-            mostrarToastBad();
+          var confirmacion = confirm("¿Estás seguro de querer eliminar esta fila?");
+          if (confirmacion){
+            try {
+              await deleteTask(dataset.id);
+              mostrarToastDel();
+            } catch (error) {
+              console.log(error);
+              mostrarToastBad();
+            }
+          }else{
+            mostrarToastDelBad();
           }
         })
       );
@@ -243,4 +248,9 @@ import {
   function mostrarToastDel() {
     var toastDel = new bootstrap.Toast(document.getElementById('liveToastDel'));
     toastDel.show();
+  }  
+
+  function mostrarToastDelBad() {
+    var toastDelBad = new bootstrap.Toast(document.getElementById('liveToastDelBad'));
+    toastDelBad.show();
   }  
