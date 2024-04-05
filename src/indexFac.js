@@ -37,14 +37,22 @@ import {
       </tr>
       `;
       });
-  
+
+
       const btnsDelete = tasksContainer.querySelectorAll(".btn-delete");
       btnsDelete.forEach((btn) =>
         btn.addEventListener("click", async ({ target: { dataset } }) => {
-          try {
-            await deleteTask(dataset.id);
-          } catch (error) {
-            console.log(error);
+          var confirmacion = confirm("¿Estás seguro de querer eliminar esta fila?");
+          if (confirmacion){
+            try {
+              await deleteTask(dataset.id);
+              mostrarToastDel();
+            } catch (error) {
+              console.log(error);
+              mostrarToastBad();
+            }
+          }else{
+            mostrarToastDelBad();
           }
         })
       );
@@ -74,6 +82,7 @@ import {
             taskForm["btn-task-formFac"].innerText = "Update";
           } catch (error) {
             console.log(error);
+            mostrarToastBad()
           }
         });
       });
@@ -140,56 +149,39 @@ import {
       mostrarToastGood();
     } catch (error) {
       console.log(error);
+      mostrarToastBad();
     }
   });
   
   
   
-  async function filterTasksByTitle(title) {
-    const tasksContainer = document.getElementById("tasks-containerFac");
-    const querySnapshot = await getTasks();
-  
-    tasksContainer.innerHTML = "";
-  
-    querySnapshot.forEach((doc) => {
-      const task = doc.data();
-      const taskTitle = task.title.toLowerCase();
-  
-      if (taskTitle.includes(title.toLowerCase())) {
-        tasksContainer.innerHTML += `
-          <tr>
-            <th scope="row">${task.title}</th>
-            <td>${task.description}</td>
-            <td>
-              <button class="btn btn-primary btn-delete" data-id="${doc.id}">
-                🗑 Delete
-              </button>
-            </td>
-            <td>
-              <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
-                🖉 Edit
-              </button>
-            </td>
-          </tr>
-        `;
-      }
-    });
-  }
-  
-  // Ejemplo de uso:
-  const btnTitulo = getElementById("botonTitulo")
-  const titulo = getElementById("titulo");
-  
-  btnTitulo = addEventListener("click",()=>{
-    filterTasksByTitle(titulo);
-  })
+ 
 
 
+ 
   function mostrarToastGood() {
-    var toast = new bootstrap.Toast(document.getElementById('liveToastGood'));
-    toast.show();
+    var toastGood = new bootstrap.Toast(document.getElementById('liveToastGood'));
+    toastGood.show();
+  }   
+
+  function mostrarToastBad() {
+    var toastBad = new bootstrap.Toast(document.getElementById('liveToastBad'));
+    toastBad.show();
+  } 
+  
+  function mostrarToastUp() {
+    var toastUp= new bootstrap.Toast(document.getElementById('liveToastUp'));
+    toastUp.show();
   }  
 
+  function mostrarToastDel() {
+    var toastDel = new bootstrap.Toast(document.getElementById('liveToastDel'));
+    toastDel.show();
+  }  
 
+  function mostrarToastDelBad() {
+    var toastDelBad = new bootstrap.Toast(document.getElementById('liveToastDelBad'));
+    toastDelBad.show();
+  }  
 
   

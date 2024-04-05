@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firebase CRUD</title>
+    <title>TodoLens</title>
+    <link rel="icon" type="icon" href="/src/icono-removebg-preview.ico">
 
     <!-- BOOTSTRAP & CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -12,7 +13,6 @@
 
   <!-- BODY -->
   <body class="bg-secundary">
-
 <h2 class="welcome_title">Bienvenido, que desea hacer:</h2>
 
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -249,7 +249,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Añadir Factura</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -257,7 +257,7 @@
         <div>
           <div>
             <div class="card-body">
-              <h1 class="h4">Add Fac</h1>
+
 
               <form id="task-formFac">
                 <label for="title">Fecha:</label>
@@ -275,8 +275,9 @@
                   id="task-nomFac"
                   class="form-control mb-3"
                   class="My First Title"
-                  placeholder="Task Title"
+                  placeholder="Añade Nombre"
                   required
+                  autocomplete="off"
                 />
                 <label for="title">C.C o NIT:</label>
                 <input
@@ -284,7 +285,7 @@
                   id="task-nitFac"
                   class="form-control mb-3"
                   class="My First Title"
-                  placeholder="Task Title"
+                  placeholder="Añade Documento"
                   required
                 />
                 <label for="title">Telefono:</label>
@@ -293,7 +294,7 @@
                   id="task-telFac"
                   class="form-control mb-3"
                   class="My First Title"
-                  placeholder="Task Title"
+                  placeholder="Añade Telefono"
                   required
                 />
 
@@ -308,19 +309,19 @@
                   <tbody>
                     <tr>
                       <th scope="row">LENTES:</th>
-                      <td><input id="lentesDes" type="text"></td>
+                      <td><input id="lentesDes" type="text" autocomplete="off" placeholder="Añade descripcion"></td>
                       <td><input class="inputfac" id="lentes" type="number" value="0"></td>
                       <!-- <td><input class="inputf" id="od_es" type="text"></td> -->
                     </tr>
                     <tr>
                       <th scope="row">MONTURAS:</th>
-                      <td><input id="monturasDes" type="text"></td>
+                      <td><input id="monturasDes" type="text" autocomplete="off" placeholder="Añade descripcion"></td>
                       <td><input class="inputfac" id="monturas" type="number" value="0"></td>
                       <!-- <td><input class="inputw" id="od_es" type="text"></td> -->
                     </tr>
                     <tr>
                       <th scope="row">OTROS:</th>
-                      <td><input id="otrosDes" type="text"></td>
+                      <td><input id="otrosDes" type="text" autocomplete="off" placeholder="Añade descripcion"></td>
                       <td><input class="inputfac" id="otros" type="number" value="0"></td>
                       <!-- <td><input class="inputw" id="od_es" type="text"></td> -->
                     </tr>
@@ -333,14 +334,14 @@
                     <tr>
                       <th scope="row">SALDO:</th>
                       <td></td>
-                      <td><input class="inputfac" id="saldo" type="text"></td>
+                      <td><input class="inputfac" id="saldo" type="text" disabled></td>
                       <!-- <td><input class="inputw" id="od_es" type="text"></td> -->
 
                     </tr>
                     <tr>
                       <th scope="row">TOTAL:</th>
                       <td></td>
-                      <td><input class="inpufac" id="total" type="text"></td>
+                      <td><input class="inpufac" id="total" type="text" disabled></td>
                       
                     </tr>
                     <tr>
@@ -407,7 +408,7 @@
 		<h2 class="title">Modificar/Eliminar Clientes</h2>
 		<p class="info">Presiona aqui para modificar clientes </p>
         <a href="/ui/updateClients.html">
-		<button class="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+		<button class="button">
 			<span>Modificar Clientes</span>
 			<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 				<path d="M0 0h24v24H0V0z" fill="none" />

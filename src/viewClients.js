@@ -255,5 +255,3 @@ Ver
   btnTitulo = addEventListener("click",()=>{
     filterTasksByTitle(titulo);
   })
-  
-  
