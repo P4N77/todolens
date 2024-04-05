@@ -44,9 +44,10 @@ import {
         btn.addEventListener("click", async ({ target: { dataset } }) => {
           try {
             await deleteTask(dataset.id);
-            
+            mostrarToastDel();
           } catch (error) {
             console.log(error);
+            mostrarToastBad();
           }
         })
       );
@@ -92,10 +93,9 @@ import {
             editStatus = true;
             id = doc.id;
             taskForm["btn-task-form"].innerText = "Update";
-            mostrarToastUp();
           } catch (error) {
-            mostrarToastBad();
             console.log(error);
+            mostrarToastBad();
             
           }
         });
@@ -216,8 +216,8 @@ import {
       taskForm.reset();
       mostrarToastGood();
     } catch (error) {
-      mostrarToastBad();
       console.log(error);
+      mostrarToastBad();
     }
   });
   
@@ -226,21 +226,21 @@ import {
 
   
   function mostrarToastGood() {
-    var toast = new bootstrap.Toast(document.getElementById('liveToastGood'));
-    toast.show();
+    var toastGood = new bootstrap.Toast(document.getElementById('liveToastGood'));
+    toastGood.show();
   }   
 
   function mostrarToastBad() {
-    var toast = new bootstrap.Toast(document.getElementById('liveToastBad'));
-    toast.show();
+    var toastBad = new bootstrap.Toast(document.getElementById('liveToastBad'));
+    toastBad.show();
   } 
   
   function mostrarToastUp() {
-    var toast = new bootstrap.Toast(document.getElementById('liveToastUp'));
-    toast.show();
+    var toastUp= new bootstrap.Toast(document.getElementById('liveToastUp'));
+    toastUp.show();
   }  
 
   function mostrarToastDel() {
-    var toast = new bootstrap.Toast(document.getElementById('liveToastDel'));
-    toast.show();
+    var toastDel = new bootstrap.Toast(document.getElementById('liveToastDel'));
+    toastDel.show();
   }  
