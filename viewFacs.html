@@ -14,7 +14,7 @@
 
   <body class="bg_clients">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav id="nav_list" class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
     </nav>
     <!-- ADD TASK -->
    
-    <div class="container p-4">
+    <div id="cont_list" class="container p-4">
       <div class="row">
         <div class="col-md-6">
           <div class="cont-cus">
@@ -121,17 +121,21 @@
                   </tbody>
                 </table>
 
+
+
+
+
+
                 
-
-
-                
-
-
               </form>
-            
+              <div class="button-containerFac">
+                <button class="save-buttonFac" id="save-buttonFac">Guardar</button>
+            </div>
             </div>
           </div>
         </div>
+
+
         <!-- Tasks List -->
         <div class="col-md-6">
         <table class="table table-striped">
@@ -150,10 +154,105 @@
       </div>
         <div ></div>
       </div>
+
+      
     </div>
+
+    
+    <div class="printFac">
+      <div class="invoice">
+        <form id="facDon">
+        <div class="headerFac">
+            <h1>Factura Electronica</h1>
+            <p>Optica TodoLents</p>
+                
+                <p>Nit: 77184559-4</p>
+                <p>Carrera 8 #16A-25 Local 2 Valledupar</p>
+                <p>+57 311 7741 084</p>
+          </div>
+        <div class="infoFac">
+          <div class="inl-block">
+            <label for="title"><strong>Cliente: </strong></label>
+              <input
+                type="text"
+                id="task-nomFac"
+                class="inp_fac_Client"
+                disabled
+              />
+          </div>
+
+          <div class="inl-block">
+            <label for="title"><strong>Cc o NIT: </strong></label>
+              <input
+                type="number"
+                id="task-nitFac"
+                class="inp_fac_Client"
+                disabled
+              />
+          </div>
+
+          <div class="inl-block">
+            <label for="title"><strong>Fecha: </strong></label>
+              <input
+                type="date"
+                id="task-fechFac"
+                class="inp_fac_Client"
+                disabled
+              />
+          </div>
+          <div class="inl-block">
+            <label for="title"><strong>N∘ Factura: #</strong></label>
+              <input
+                type="number"
+                id="task-nFac"
+                class="inp_fac"
+                disabled
+              />
+          </div>
+          
+        </div>
+        <table class="itemsFac">
+            <thead>
+                <tr>
+                    <th>Descripcion</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                  <td><input class="inputfac2" id="lentesDes" type="text" disabled></td>
+                  <td> $<input class="inputfac2" id="lentes" type="number" disabled ></td>
+                </tr>
+                <tr class="tr_fon">
+                  <td><input class="inputfac2" id="monturasDes" type="text" disabled></td>
+                  <td> $<input class="inputfac2" id="monturas" type="number" disabled></td>
+                </tr>
+                <tr>
+                  <td><input  class="inputfac2" id="otrosDes" type="text" disabled></td>
+                  <td>$<input class="inputfac2" id="otros" type="number" disabled></td>
+                </tr>
+                <tr class="tr_fon">
+                  <td><strong> --ABONO: </strong></td>
+                      <td><input class="inputfac2" id="abono" type="number" disabled></td>
+                </tr>
+
+                <td><strong> --SALDO: </strong></td>
+                <td><input class="inputfac2" id="saldo" type="number" disabled></td>
+
+            </tbody>
+        </table>
+        <div class="totalFac">
+            <p><strong>Total:<input class="inputfac2" id="total" type="number" disabled></strong></p>
+        </div>
+      </form>
+    </form>  
+    </div>
+    </div>
+  
 
     <!-- CUSTOM CODE -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="src/viewFacs.js" type="module"></script>
+    <script src="src/funtions.js"></script>
   </body>
 </html>

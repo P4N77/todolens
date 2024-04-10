@@ -48,7 +48,9 @@ export const saveTask = (
   aboFac,
   salFac,
   totFac,
-  telFac) =>
+  telFac,
+  numFac
+) =>
   addDoc(collection(db, "facs"), {
     fech,
     nameFac,
@@ -62,7 +64,8 @@ export const saveTask = (
     aboFac,
     salFac,
     totFac,
-    telFac
+    telFac,
+    numFac
 });
 
 export const onGetTasks = (callback) =>

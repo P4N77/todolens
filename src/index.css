@@ -5,6 +5,14 @@
     font-weight: 100;
 }
 
+
+
+
+
+
+
+
+
 .table_clients{
 	margin: auto;
 }
@@ -101,14 +109,12 @@ a{
 body {
 	font-family: "Spline Sans", sans-serif;
 	line-height: 1.5;
-	min-height: 100vh;
 	background-color: var(--c-ash);
 }
 
 .bg_clients {
 	font-family: "Spline Sans", sans-serif;
 	line-height: 1.5;
-	min-height: 100vh;
 	background-color: var(--c-ash);
 }
 
@@ -227,17 +233,162 @@ body {
 	}
 }
 
+/* .invoice{
+	display: none;
+} */
 
-@media print {
-	/* Estilos que se aplicarán cuando se imprima la página */
-	body {
-	  background-color: rgb(218, 6, 6); /* Cambia el color de fondo */
+.inputfac2{
+	background-color: transparent;
+	border: none; /* Quita el borde */
+    outline: none; /* Quita el resaltado al hacer clic */
+}
+
+.tr_fon{
+	background-color: #91919123;
+}
+
+.inp_fac{
+	width: 50px;
+	background-color: transparent;
+	border: none; /* Quita el borde */
+    outline: none; /* Quita el resaltado al hacer clic */
+}
+.inp_fac_Client{
+	width: 80%;
+	background-color: transparent;
+	border: none; /* Quita el borde */
+    outline: none; /* Quita el resaltado al hacer clic */
+	
+}
+
+
+.inl_block{
+	display: inline-block;
+	text-align: right;
+}
+
+.invoice{
+	background-image: url(/fondo_Fac.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(255, 255, 255, 0);
+}
+.printFac{
+	display: none;
+}
+@media print{
+
+
+
+
+.bg_clients {
+	font-family: "Spline Sans", sans-serif;
+	line-height: 1.5;
+
+}
+
+	.printFac{
+		display: block;
+    }
+	@page {
+        size: A4; /* Especificar el tamaño de la página, por ejemplo, A4 */
+    }
+
+	body{
+		font-family: "Spline Sans", sans-serif;
+		line-height: 1.5;
+		background-color: var(--c-ash);
 	}
-  
-	.ocultar-en-impresion {
-	  display: none; /* Oculta elementos específicos en la impresión */
+	#nav_list{
+		display: none;
 	}
-  
-	/* Otros estilos de impresión... */
-  }
-  
+	#cont_list{
+		display: none;
+	}
+
+
+
+
+	.invoice {
+		display: block;
+		width: 80%;
+		margin: 50px auto;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	.headerFac {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	
+	.headerFac h1 {
+		color: #333;
+		font-size: 24px;
+		margin: 5px 0;
+	}
+	
+	.headerFac p {
+		color: #666;
+		margin: 5px 0;
+	}
+	
+	.info p {
+		color: #666;
+		margin: 2px 0;
+	}
+	
+	.itemsFac {
+		width: 100%;
+		border-collapse: collapse;
+		margin-top: 20px;
+	}
+	
+	.itemsFac th, .items td {
+		border: 1px solid #ddd;
+		padding: 8px;
+	}
+	
+	.itemsFac th {
+		background-color: #f2f2f287;
+	}
+	
+	.totalFac {
+		text-align: right;
+		margin-top: 20px;
+	}
+	
+	.totalFac p {
+		font-size: 18px;
+		color: #333;
+		margin: 5px 0;
+	}
+	
+	.button-containerFac {
+		text-align: right;
+		margin-top: 20px;
+	}
+	
+	.save-buttonFac {
+		padding: 10px 20px;
+		font-size: 16px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	
+	.save-buttonFac:hover {
+		background-color: #45a049;
+	}
+	
+}
+
+
+
+
+
+

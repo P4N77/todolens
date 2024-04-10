@@ -9,33 +9,10 @@ import {
   
   const taskForm = document.getElementById("task-formFac");
   const tasksContainer = document.getElementById("tasks-containerFac");
-  const facD = document.getElementById("facDon")
-  console.log(taskForm["task-nitFac"]);
-
-  console.log(facD["task-nomFac"]);
   
   let editStatus = false;
   let id = "";
   
-  const arrayNum =[]
-  console.log(arrayNum);
-
-
-function encontrarMaximo() {
-  let maximo;
-
-  // Verifica si el arreglo tiene elementos
-  if (arrayNum.length > 0) {
-    // Encuentra el número más grande y asigna a la variable maximo
-    maximo = Math.max(...arrayNum);
-    console.log("El número más grande es:", maximo);
-  } else {
-    console.log("El arreglo está vacío.");
-  }
-
-  // Devuelve el número máximo
-  return maximo;
-}
 
 
 
@@ -66,24 +43,15 @@ function encontrarMaximo() {
   
       querySnapshot.forEach((doc) => {
         const task = doc.data();
-        console.log(task);
-        let temp= task.numFac
-        arrayNum.push(temp);
-        // if (typeof task.numFac === "number") {
-        //   arrayNum.push(task.numFac)
-        // }
-        // console.log(arrayNum);
-        // validar();
-        tasksContainer.innerHTML += `
-      <tr>
+        tasksContainer.innerHTML +=
+        ` <tr>
         <th scope="row">${task.ccFac}</th>
         <td>${task.nameFac}</td>
-        <td></td>
-        <td>      <button class="btn bg-info btn-edit" data-id="${doc.id}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-</svg>
-Ver
+        <td>   <button class="btn btn-primary btn-delete" data-id="${doc.id}">
+        🗑 Delete
+      </button></td>
+        <td>      <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
+        🖉 Edit
       </button></td>
       </tr>
       `;
@@ -92,10 +60,18 @@ Ver
       const btnsDelete = tasksContainer.querySelectorAll(".btn-delete");
       btnsDelete.forEach((btn) =>
         btn.addEventListener("click", async ({ target: { dataset } }) => {
-          try {
-            await deleteTask(dataset.id);
-          } catch (error) {
-            console.log(error);
+
+          var confirmacion = confirm("¿Estás seguro de querer eliminar esta fila?");
+          if (confirmacion){
+            try {
+              await deleteTask(dataset.id);
+              mostrarToastDel();
+            } catch (error) {
+              console.log(error);
+              mostrarToastBad();
+            }
+          }else{
+            mostrarToastDelBad();
           }
         })
       );
@@ -119,31 +95,6 @@ Ver
           taskForm["saldo"].value = task.salFac,
           taskForm["total"].value = task.totFac,
           taskForm["task-telFac"].value = task.telFac,
-          facD["task-nFac"].value = task.numFac,
-          facD["task-nomFac"].value = task.nameFac,
-          facD["task-nitFac"].value = task.ccFac,
-          facD["task-fechFac"].value = task.fech
-
-          if (task.lenFac == '') {
-            facD["lentes"].value = '-----'
-          }else{
-            facD["lentes"].value = task.lenFac
-          }
-          
-          facD["lentesDes"].value = task.lenFacVal,
-          facD["monturas"].value = task.monFac,
-          facD["monturasDes"].value = task.monFacVal
-
-          if (task.otrFacVal == "") {
-            facD["otrosDes"].value = "-----"
-          }else{
-            facD["otrosDes"].value = task.otrFacVal
-          }
-          facD["otros"].value = task.otrFac,
-          facD["otrosDes"].value = task.otrFacVal,
-          facD["abono"].value =task.aboFac,
-          facD["saldo"].value = task.salFac,
-          facD["total"].value = task.totFac,
   
             editStatus = true;
             id = doc.id;
@@ -223,3 +174,28 @@ Ver
  
 
   
+  
+  function mostrarToastGood() {
+    var toastGood = new bootstrap.Toast(document.getElementById('liveToastGood'));
+    toastGood.show();
+  }   
+
+  function mostrarToastBad() {
+    var toastBad = new bootstrap.Toast(document.getElementById('liveToastBad'));
+    toastBad.show();
+  } 
+  
+  function mostrarToastUp() {
+    var toastUp= new bootstrap.Toast(document.getElementById('liveToastUp'));
+    toastUp.show();
+  }  
+
+  function mostrarToastDel() {
+    var toastDel = new bootstrap.Toast(document.getElementById('liveToastDel'));
+    toastDel.show();
+  }  
+
+  function mostrarToastDelBad() {
+    var toastDelBad = new bootstrap.Toast(document.getElementById('liveToastDelBad'));
+    toastDelBad.show();
+  }  

@@ -70,6 +70,8 @@ document.getElementById('calcularButton').addEventListener('click', function(e) 
     
   });
 
+
+
   // document.getElementById('boton1').addEventListener('click', function() {
   //   document.getElementById('actualizar').removeAttribute('disabled');
   // });
