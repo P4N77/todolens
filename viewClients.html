@@ -16,8 +16,7 @@
 <!-- Modal -->
 
   <body class="bg_clients">
-
-    <nav class="navbar navbar_cus navbar-expand-lg colorBG bg-body-tertiary">
+    <nav id="nav_pp" class="navbar navbar_cus navbar-expand-lg colorBG bg-body-tertiary">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,7 +35,7 @@
 
     <!-- ADD TASK -->
 
-    <div class="container p-4">
+    <div id="list_pp" class="container p-4">
       <div class="row">
         <div class="col-md-6">
           <div class="cont-cus">
@@ -151,8 +150,10 @@
                     </tr>
                   </tbody>
                 </table>
-              </form>
 
+              </form>
+                <div class="button-containerFac">
+                  <button class="save-buttonFac" id="save-buttonFac">Guardar</button></div>
             </div>
           </div>
         </div>
@@ -176,8 +177,85 @@
       </div>
     </div>
 
+    <div class="invoiceP" id="invoiceP">
+      <form id="facP">
+      <div class="headerP">
+          <h1>Optica Todolents</h1>
+          <p>Nit: 77184559-4 <br>
+              Carrera 8 #16A-25 Local 2 Valledupar <br>
+              +57 311 7741 084</p>
+              <h1 class="form_titP">Formula</h1>
+      </div>
+      <div class="infoP">
+          <p><strong>Paciente:</strong> <input type="text" id="task-name" class="inp_pp"></p>
+          <p><strong>ID:</strong><input type="number" id="task-doc" class="inp_p"></p>
+          <p><strong>Telefono:</strong><input type="number" id="task-tel" class="inp_p"></p>
+      </div>
+      <table class="itemsP">
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Esfera</th>
+                  <th>Cilindro</th>
+                  <th>Grados</th>
+                  <th>Adicion</th>
+                  <th>A.V</th>
+                  <th>DP.U</th>
+              </tr>
+
+          </thead>
+          <tbody>
+              <tr>
+                  <th>OD</th>
+                  <th><input type="text" class="inp_fac_down" id="od_es"></th>
+                  <th><input type="text" class="inp_fac_down" id="od_ci"></th>
+                  <th><input type="text" class="inp_fac_down" id="od_gr"></th>
+                  <th><input type="text" class="inp_fac_down" id="od_ad"></th>
+                  <th><input type="text" class="inp_fac_down" id="od_av"></th>
+                  <th><input type="text" class="inp_fac_down" id="od_dp"></th>
+              </tr>
+              <tr>
+                  <th>OI</th>
+                  <th><input type="text" class="inp_fac_down" id="oi_es"></th>
+                  <th><input type="text" class="inp_fac_down" id="oi_ci"></th>
+                  <th><input type="text" class="inp_fac_down" id="oi_gr"></th>
+                  <th><input type="text" class="inp_fac_down" id="oi_ad"></th>
+                  <th><input type="text" class="inp_fac_down" id="oi_av"></th>
+                  <th><input type="text" class="inp_fac_down" id="oi_dp"></th>
+              </tr>
+              <tr>
+                  <th>Lentes/OD</th>
+                  <th><input type="text" class="inp_fac_down" id="lens_od_es"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_od_ci"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_od_gr"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_od_ad"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_od_av"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_od_dp"></th>
+              </tr>
+              <tr>
+                  <th>Lentes/OI</th>
+                  <th><input type="text" class="inp_fac_down" id="lens_oi_es"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_oi_ci"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_oi_gr"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_oi_ad"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_oi_av"></th>
+                  <th><input type="text" class="inp_fac_down" id="lens_oi_dp"></th>
+              </tr>
+          </tbody>
+      </table>
+      <div class="diagnostico">
+          <p><strong>Diagnostico:</strong></p>
+          <div class="espacio"></div>
+      </div>
+      <div class="diagnostico">
+          <p><strong>Observaciones:</strong></p>
+          <div class="espacio"></div>
+      </div>
+      </form>
+    </div>
     <!-- CUSTOM CODE -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="src/viewClients.js" type="module"></script>
+    <script src="src/funtionsP.js"></script>
   </body>
 </html>

@@ -9,6 +9,8 @@ import {
   
   const taskForm = document.getElementById("task-form");
   const tasksContainer = document.getElementById("tasks-container");
+  const forP = document.getElementById("facP")
+  console.log(forP["task-name"]);
   
   let editStatus = false;
   let id = "";
@@ -87,7 +89,34 @@ Ver
               taskForm["lens_oi_ad"].value = task.len_oi_add,
             taskForm["lens_oi_av"].value = task.len_oi_av,
             taskForm["lens_oi_dp"].value = task.len_oi_dpu,
-  
+            forP["task-name"].value =task.lastnameClient+" "+task.nameClient,
+            forP["task-doc"].value = task.idClient;
+            forP["task-tel"].value = task.telClient;
+            forP["od_es"].value = task.od_es,
+            forP["od_ci"].value = task.od_cil,
+            forP["od_gr"].value = task.od_gra,
+            forP["od_ad"].value = task.od_add,
+          forP["od_av"].value = task.od_av,
+          forP["od_dp"].value = task.od_dpu,
+            forP["oi_es"].value = task.oi_es,
+            forP["oi_ci"].value = task.oi_cil,
+            forP["oi_gr"].value = task.oi_gra,
+            forP["oi_ad"].value = task.oi_add,
+          forP["oi_av"].value = task.oi_av,
+          forP["oi_dp"].value = task.oi_dpu,
+              forP["lens_od_es"].value = task.len_od_es,
+              forP["lens_od_ci"].value = task.len_od_cil,
+              forP["lens_od_gr"].value = task.len_od_gra,
+              forP["lens_od_ad"].value = task.len_od_add,
+            forP["lens_od_av"].value = task.len_od_av,
+            forP["lens_od_dp"].value = task.len_od_dpu,
+              forP["lens_oi_es"].value = task.len_oi_es,
+              forP["lens_oi_ci"].value = task.len_oi_cil,
+              forP["lens_oi_gr"].value = task.len_oi_gra,
+              forP["lens_oi_ad"].value = task.len_oi_add,
+            forP["lens_oi_av"].value = task.len_oi_av,
+            forP["lens_oi_dp"].value = task.len_oi_dpu,
+
   
             editStatus = true;
             id = doc.id;

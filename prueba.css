@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 
-.invoice {
+.invoiceP {
     width: 80%;
     margin: 50px auto;
     background: #fff;
@@ -17,23 +17,23 @@ body {
 	background-position: center;
 }
 
-.form_tit{
+.form_titP{
     margin-top: 10px;
     border-bottom: 1px solid gray;
 }
 
-.header {
+.headerP {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.header h1 {
+.headerP h1 {
     color: #333;
     font-size: 20px;
     margin: 5px 0;
 }
 
-.header p {
+.headerP p {
     color: #666;
     margin: 5px 0;
 }
@@ -58,32 +58,20 @@ body {
 }
 
 
-.info p {
+.infoP p {
     color: #666;
     margin: 5px 0;
 }
 
-.items {
+.itemsP {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.items th, .items td {
+.itemsP th, .items td {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-.items th {
-}
 
-.total {
-    text-align: right;
-    margin-top: 40px;
-}
-
-.total p {
-    font-size: 16px;
-    color: #333;
-    margin: 5px 0;
-}
