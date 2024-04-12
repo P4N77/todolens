@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.invoice {
+    width: 80%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url(src/fondo_fac.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.form_tit{
+    margin-top: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #333;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.header p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.diagnostico{
+    display: inline-flex;
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.espacio{
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+
+.inp_fac_down{
+    width: 50px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid gray;;
+}
+
+
+.info p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.items th, .items td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.items th {
+}
+
+.total {
+    text-align: right;
+    margin-top: 40px;
+}
+
+.total p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
